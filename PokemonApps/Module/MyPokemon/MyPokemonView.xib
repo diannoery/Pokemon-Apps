@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPokemonView" customModule="PokemonApps" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyPokemon" destination="r6G-n6-G3q" id="855-8g-Ik4"/>
+                <outlet property="listTable" destination="8vi-8B-dCM" id="kJS-fb-dIp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Pokemon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTv-uS-LiP">
+                    <rect key="frame" x="20" y="64" width="374" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-8B-dCM">
+                    <rect key="frame" x="20" y="118" width="374" height="734"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6G-n6-G3q">
+                    <rect key="frame" x="20" y="118" width="374" height="734"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="doesn't have a pokemon list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtW-wU-ope">
+                            <rect key="frame" x="81" y="356.5" width="212" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="vtW-wU-ope" firstAttribute="centerX" secondItem="r6G-n6-G3q" secondAttribute="centerX" id="8vY-oO-pLt"/>
+                        <constraint firstItem="vtW-wU-ope" firstAttribute="centerY" secondItem="r6G-n6-G3q" secondAttribute="centerY" id="iFd-De-XwR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="r6G-n6-G3q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2CB-dw-U1C"/>
+                <constraint firstItem="r6G-n6-G3q" firstAttribute="top" secondItem="zTv-uS-LiP" secondAttribute="bottom" constant="30" id="36k-gr-RiU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r6G-n6-G3q" secondAttribute="trailing" constant="20" id="3Da-4H-tJ5"/>
+                <constraint firstItem="8vi-8B-dCM" firstAttribute="top" secondItem="zTv-uS-LiP" secondAttribute="bottom" constant="30" id="3L9-lw-5V4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="r6G-n6-G3q" secondAttribute="bottom" constant="10" id="F2W-pa-ovS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8vi-8B-dCM" secondAttribute="bottom" constant="10" id="MKK-VH-fkC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zTv-uS-LiP" secondAttribute="trailing" constant="20" id="NNF-98-pah"/>
+                <constraint firstItem="zTv-uS-LiP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iYh-Gg-Nit"/>
+                <constraint firstItem="zTv-uS-LiP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="my6-xT-6Uw"/>
+                <constraint firstItem="8vi-8B-dCM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oOz-g4-Llv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8vi-8B-dCM" secondAttribute="trailing" constant="20" id="vEy-00-rzs"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="55.580357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
