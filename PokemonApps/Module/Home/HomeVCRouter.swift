@@ -21,6 +21,7 @@ class HomeVCRouter {
     func navigateDetail(nav: UINavigationController, data: PokemoDetailModel) {
         let vc = DetailPokemon()
         vc.dataDetail = data
+        vc.title = "Detail Pokemon"
         nav.pushViewController(vc, animated: true)
     }
     
