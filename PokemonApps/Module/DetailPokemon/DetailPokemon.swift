@@ -35,6 +35,7 @@ class DetailPokemon: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        catchBtn.layer.cornerRadius = 10
         catchBtn.rx.tap.subscribe { _ in
             self.catchPokemon()
         }.disposed(by: bag)
@@ -173,11 +174,9 @@ extension DetailPokemon {
                 break
             }
         }
-        
-        
-        
-        
+    
     }
+    
 }
 
 extension DetailPokemon: NickNamesDelegate {
