@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NicknamesView" customModule="PokemonApps" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="wQA-I1-gLw" id="uPe-UK-ZCv"/>
                 <outlet property="nicknames" destination="edc-Au-a1z" id="UuX-CC-Mqu"/>
                 <outlet property="pokemonImg" destination="xJS-5B-EHc" id="fdv-4W-430"/>
                 <outlet property="saveBtn" destination="qeo-Mh-ZVt" id="3i3-GP-gjE"/>

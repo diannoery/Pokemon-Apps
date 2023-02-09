@@ -14,7 +14,6 @@ class MyPokemonView: UIViewController {
     @IBOutlet weak var emptyPokemon: UIView!
     
     let bag = DisposeBag()
-    var presenter: MyPokemonPresenter?
     var dataPokemon: [PokemoDetailModel] = []
     
     override func viewDidLoad() {

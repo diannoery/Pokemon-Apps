@@ -30,6 +30,7 @@ class DetailPokemon: UIViewController {
     let bag = DisposeBag()
     var dataDetail: PokemoDetailModel?
     var dataMyPokemon: PokemoDetailModel?
+    var imageUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,7 @@ extension DetailPokemon {
         guard let nav = self.navigationController else { return  }
         let vc = NicknamesView()
         vc.delegate = self
+        vc.imageUrl = imageUrl
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         nav.present(vc, animated: true)
@@ -129,6 +131,7 @@ extension DetailPokemon {
     
     func setupView() {
         guard let data = dataDetail else { return  }
+        imageUrl = data.sprites.other?.home.frontDefault ?? ""
         let imageUrl = URL(string: data.sprites.other?.home.frontDefault ?? "")
         statView.layer.cornerRadius = 10
         statView.layer.borderWidth = 1

@@ -39,6 +39,8 @@ class HomeVCView: UIViewController {
         activityIndicator.style = .medium
         activityIndicator.color = .gray
         Constants.userDefaults.removeObject(forKey: "pokemon")
+        myPokemonBtn.layer.cornerRadius = 10
+        
     }
     
    
