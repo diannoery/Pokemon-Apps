@@ -13,6 +13,8 @@ import RxCocoa
 class HomeVCView: UIViewController {
     @IBOutlet weak var listTable: UITableView!
     @IBOutlet weak var myPokemonBtn: UIButton!
+    @IBOutlet weak var loading: UIView!
+    @IBOutlet weak var loadingIdicator: UIActivityIndicatorView!
     
     let activityIndicator = UIActivityIndicatorView()
     let bag = DisposeBag()
@@ -21,9 +23,10 @@ class HomeVCView: UIViewController {
     var dataDetailPokemon: PokemoDetailModel?
     var page = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         // MARK: hit data list Pokemon
         presenter?.getListPokemon(limit: 10, offset: page).subscribe(onNext: { [weak self] data in
             guard let self = self else { return }
@@ -38,14 +41,13 @@ class HomeVCView: UIViewController {
         listTable.tableFooterView = activityIndicator
         activityIndicator.style = .medium
         activityIndicator.color = .gray
-        Constants.userDefaults.removeObject(forKey: "pokemon")
         myPokemonBtn.layer.cornerRadius = 10
         
     }
     
-   
     
-
+    
+    
 }
 
 extension HomeVCView {
@@ -70,13 +72,20 @@ extension HomeVCView {
     
     // MARK: fungsi untuk hit data detail dari pokemon
     func getDetail(id: Int) {
+        loading.isHidden = false
+        loadingIdicator.startAnimating()
+        loadingIdicator.hidesWhenStopped = true
+        listTable.allowsSelection = false
         presenter?.getDetailPokemon(id: id)
             .take(1)
             .subscribe(onNext: { [weak self] data in
-            guard let self = self else { return }
-            self.dataDetailPokemon = data
-            self.navigateDetail()
-        }).disposed(by: bag)
+                guard let self = self else { return }
+                self.dataDetailPokemon = data
+                self.navigateDetail()
+                self.loadingIdicator.stopAnimating()
+                self.loading.isHidden = true
+                self.listTable.allowsSelection = true
+            }).disposed(by: bag)
     }
     
     // MARK: fungsi untuk endless scroll
@@ -87,13 +96,13 @@ extension HomeVCView {
         presenter?.getListPokemon(limit: 10, offset: page)
             .take(1)
             .subscribe(onNext: { [weak self] data in
-            guard let self = self else { return }
-            self.dataPokemon.append(contentsOf: data.results)
-            self.activityIndicator.stopAnimating()
-            self.listTable.reloadData()
-        }).disposed(by: bag)
-
-        }
+                guard let self = self else { return }
+                self.dataPokemon.append(contentsOf: data.results)
+                self.activityIndicator.stopAnimating()
+                self.listTable.reloadData()
+            }).disposed(by: bag)
+        
+    }
 }
 
 extension HomeVCView:  UITableViewDelegate, UITableViewDataSource {
@@ -128,8 +137,8 @@ extension HomeVCView:  UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == dataPokemon.count - 1 {
-              loadMoreData()
-           }
+            loadMoreData()
+        }
     }
     
 }

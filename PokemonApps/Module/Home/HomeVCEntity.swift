@@ -351,8 +351,8 @@ struct GenerationVii: Codable {
 
 // MARK: - DreamWorld
 struct DreamWorld: Codable {
-    var frontDefault: String
-    var frontFemale: JSONNull?
+    var frontDefault: String?
+    var frontFemale: String?
     
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"

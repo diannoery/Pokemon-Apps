@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVCView" customModule="PokemonApps" customModuleProvider="target">
             <connections>
                 <outlet property="listTable" destination="FhX-3d-oIC" id="OZI-mn-rx8"/>
+                <outlet property="loading" destination="54P-Jv-o2S" id="mPl-NZ-Idn"/>
+                <outlet property="loadingIdicator" destination="Dg3-Si-P12" id="ebS-bI-sfm"/>
                 <outlet property="myPokemonBtn" destination="YDL-FY-p8S" id="AEg-ed-0AY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -41,6 +43,25 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54P-Jv-o2S">
+                    <rect key="frame" x="157" y="403" width="100" height="100"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Dg3-Si-P12">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Dg3-Si-P12" firstAttribute="centerY" secondItem="54P-Jv-o2S" secondAttribute="centerY" id="CHD-sl-HkF"/>
+                        <constraint firstAttribute="width" constant="100" id="EJG-SJ-heR"/>
+                        <constraint firstAttribute="height" constant="100" id="QIP-f3-jc1"/>
+                        <constraint firstItem="Dg3-Si-P12" firstAttribute="centerX" secondItem="54P-Jv-o2S" secondAttribute="centerX" id="Tf7-Vn-ieM"/>
+                        <constraint firstAttribute="bottom" secondItem="Dg3-Si-P12" secondAttribute="bottom" id="eMe-OQ-DvT"/>
+                        <constraint firstItem="Dg3-Si-P12" firstAttribute="top" secondItem="54P-Jv-o2S" secondAttribute="top" id="hf6-U6-aPN"/>
+                        <constraint firstAttribute="trailing" secondItem="Dg3-Si-P12" secondAttribute="trailing" id="tv9-LN-dFL"/>
+                        <constraint firstItem="Dg3-Si-P12" firstAttribute="leading" secondItem="54P-Jv-o2S" secondAttribute="leading" id="ySY-pW-IAg"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,9 +70,11 @@
                 <constraint firstItem="aea-tS-u2Y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="M9g-JU-snF"/>
                 <constraint firstItem="YDL-FY-p8S" firstAttribute="top" secondItem="FhX-3d-oIC" secondAttribute="bottom" constant="15" id="MbH-R6-PPM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aea-tS-u2Y" secondAttribute="trailing" constant="20" id="VmE-Ia-faY"/>
+                <constraint firstItem="54P-Jv-o2S" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XNt-bl-fsd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YDL-FY-p8S" secondAttribute="trailing" constant="20" id="YIb-oe-LCS"/>
                 <constraint firstItem="FhX-3d-oIC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eJX-Of-LWE"/>
                 <constraint firstItem="aea-tS-u2Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gLi-vT-hc0"/>
+                <constraint firstItem="54P-Jv-o2S" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gW5-8Y-7cn"/>
                 <constraint firstItem="YDL-FY-p8S" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jMs-Gi-rgp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FhX-3d-oIC" secondAttribute="trailing" constant="20" id="mfB-iZ-mUj"/>
                 <constraint firstItem="YDL-FY-p8S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vHp-cP-BCS"/>
